@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shooki/common/app_routes.dart';
 import 'package:shooki/common/navigation_service.dart';
 
 import 'common/app_theme.dart';
 
 void main() {
-  runApp(const ShookiApp());
+  runApp(
+    MultiBlocProvider(
+      providers: [
+
+      ],
+      child: const ShookiApp(),
+    ),
+  );
 }
 
 class ShookiApp extends StatelessWidget {
@@ -19,8 +27,6 @@ class ShookiApp extends StatelessWidget {
       theme: AppThemes.theme,
       routes: AppRoutes.routes,
       navigatorKey: NavigationService.navigatorKey,
-
     );
   }
 }
-
